@@ -7,9 +7,9 @@ if [ ! -e "/config/www/robots.txt" ]; then
 
         mkdir -p /config/www/ 
         unzip -o /aria-ng-0.3.0.zip -d /config/www/
-        touch /aria2/aria2.session
         
 fi
+touch /aria2/aria2.session
 chown $HTUSER:$HTUSER -R /config/www/
 chown $HTUSER:$HTUSER -R /data
 chown $HTUSER:$HTUSER -R /aria2
