@@ -1,0 +1,31 @@
+version: '3'
+
+services:
+  aria2-ariang:
+    build: ./
+    restart: always
+    environment:
+     - PUID=1000
+     - PGID=1000
+     - ARIA_ALLOW_UNSECURE=1
+     - ARIA_TORRENT_LISTEN_PORTS=44120-44129
+     - ARIA_DHT_LISTEN_PORTS=44130
+     - ARIR_RPC_SECRET=your_rpc_secret
+     - VIRTUAL_HOST=aria2.ongo.top
+     # - VIRTUAL_PROTO=https
+     # -VIRTUAL_PORT=443
+    ports:
+     - 80:80
+     - 443:443
+     - 6800:6800
+     - "44120-44129:44120-44129/tcp"
+     - "44130:44130/tcp"
+     - "44120-44129:44120-44129/udp"
+     - "44130:44130/udp"
+    volumes:
+     - ./data/aria2/data:/data
+     - ./keys:/config/keys
+
+volumes:
+  data:
+  keys:
