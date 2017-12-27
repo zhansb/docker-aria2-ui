@@ -24,6 +24,7 @@ services:
      - "44130:44130/udp"
     volumes:
      - ./data/aria2/data:/data
+     - ./data/aria2/info:/aria2
      - ./keys:/config/keys
 
 volumes:
