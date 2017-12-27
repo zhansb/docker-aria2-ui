@@ -2,10 +2,10 @@
 
 if [ -n "$VIRTUAL_HOST" ]; then
     KEY_NAME=$VIRTUAL_HOST
-    sed -i "s/cert.crt/$VIRTUAL_HOST.crt/g" /config/nginx/site-confs/default
-    sed -i "s/cert.key/$VIRTUAL_HOST.key/g" /config/nginx/site-confs/default
+    sed -i "s/aria2.crt/$VIRTUAL_HOST.crt/g" /config/nginx/site-confs/default
+    sed -i "s/aria2.key/$VIRTUAL_HOST.key/g" /config/nginx/site-confs/default
 else
-    KEY_NAME=cert
+    KEY_NAME=aria2
 fi
 
 SUBJECT="//C=US/ST=CA/L=Carlsbad/O=Linuxserver.io/OU=LSIO Server/CN=*"
