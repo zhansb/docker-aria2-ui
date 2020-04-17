@@ -1,0 +1,16 @@
+version: '3'
+
+services:
+  aria2-ariang:
+    build: ./
+    restart: always
+    environment:
+     - PUID=1000
+     - PGID=1000
+     - ARIR_RPC_SECRET=your_rpc_secret
+    ports:
+     - 10080:80
+     - 6800:6800
+    volumes:
+     - ${HOME}/Downloads/aria2/data:/data
+     - ${HOME}/Downloads/aria2/info:/aria2

@@ -1,0 +1,15 @@
+#!/usr/bin/with-contenv bash
+
+echo "[cont-init.d] 50-install: install ..."
+# install app
+if [ ! -e "/config/www/robots.txt" ]; then
+        echo "[cont-init.d] 50-install: install Aria-ng"
+
+        mkdir -p /config/www/ 
+        unzip -o /aria-ng-0.3.0.zip -d /config/www/
+        
+fi
+touch /aria2/aria2.session
+chown $HTUSER:$HTUSER -R /config/www/
+chown $HTUSER:$HTUSER -R /data
+chown $HTUSER:$HTUSER -R /aria2
