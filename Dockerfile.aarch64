@@ -1,4 +1,4 @@
-FROM lsiobase/alpine.nginx:3.6
+FROM lsiobase/alpine.nginx.arm64:3.6
 
 ENV HTUSER='abc'
 

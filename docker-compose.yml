@@ -8,21 +8,9 @@ services:
      - PUID=1000
      - PGID=1000
      - ARIR_RPC_SECRET=your_rpc_secret
-     - VIRTUAL_HOST=aria2.ongo.top
-     # - VIRTUAL_PROTO=https
-     # -VIRTUAL_PORT=443
     ports:
-     - 80:80
-     - 443:443
-     - "44120-44129:44120-44129/tcp"
-     - "44130:44130/tcp"
-     - "44120-44129:44120-44129/udp"
-     - "44130:44130/udp"
+     - 10080:80
+     - 6800:6800
     volumes:
-     - ./data/aria2/data:/data
-     - ./data/aria2/info:/aria2
-     - ./keys:/config/keys
-
-volumes:
-  data:
-  keys:
+     - ${HOME}/Downloads/aria2/data:/data
+     - ${HOME}/Downloads/aria2/info:/aria2
